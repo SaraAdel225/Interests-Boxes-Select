@@ -1,0 +1,60 @@
+:root {
+    --main-purple-color: #5A00F3;
+    --elements-background-color: #eeecfd;
+    --element-border-color: #e0e0e1;
+}
+h2{
+    background-color: var(--elements-background-color);
+    color: var(--main-purple-color);
+    padding: 20px;
+    text-align: center;
+}
+form {
+    background-color: var(--elements-background-color);
+    padding: 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+form div {
+    background-color: white;
+    border: var(--element-border-color) 3px solid;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 30px;
+}
+form  div p{
+    font-size: 20px;
+    margin: 10px;
+}
+form  div input{
+    appearance: none;
+}
+form  div label{
+    position: relative;
+}
+form  div label::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--main-purple-color);
+    border-radius: 4px;
+    position: absolute;
+    top: -70px;
+    left: -110px;
+}
+form  div input:checked + label::after,
+form  div input:not(:checked):hover + label::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--main-purple-color);
+    background-color: var(--main-purple-color);
+    border-radius: 4px;
+    position: absolute;
+    top: -65px;
+    left: -105px;
+}
+form  div input:not(:checked):hover + label::after{
+    opacity: .2;
+}
